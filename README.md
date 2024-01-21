@@ -10,7 +10,7 @@ Therefore, I created this repository with the purpose of having a **full backend
 - GraphQL
 - PostgreSQL + ORM Sequelize
 - Fetch an external API with fetch
-- Vitest + Supertest for tests
+- Vitest + Supertest for the tests
 - Docker-compose to run the app and database
 
 ## How to run it
