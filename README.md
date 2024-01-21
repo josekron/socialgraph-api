@@ -11,7 +11,7 @@ Therefore, I created this repository with the purpose of having a **full backend
 - PostgreSQL + ORM Sequelize
 - Fetch an external API with fetch
 - Vitest + Supertest for the tests
-- Docker-compose to run the app and database
+- Docker-compose to run the app and the database
 
 ## How to run it
 
