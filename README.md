@@ -1,6 +1,6 @@
 ### Description
 
-I noticed that you can only find the same basic examples on the internet when you search for graphQL or PostgreSQL, and you can't even forget to find something with both technologies running together. 
+I noticed that you can only find the same basic examples on the internet when you search for graphQL or PostgreSQL, and you can even forget to find something with both technologies running together. 
 
 Therefore, I created this repository with the purpose of having a **full backend application (almost) ready for production, using some of the most in-demand technologies** such as **GraphQL** and **PostgreSQL**, and everything running on **Docker-compose**. 
 
