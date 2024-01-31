@@ -10,8 +10,10 @@ Therefore, I created this repository with the purpose of having a **full backend
 - GraphQL
 - PostgreSQL + ORM Sequelize
 - Call an external API with fetch
-- Vitest + Supertest for the tests
+- Jest + Supertest for the tests
 - Docker-compose to run the app and the database
+
+> **Note:** `vitest` has an [unsolved issue](https://github.com/vitejs/vite/issues/7879) with `express` + `supertest-graphql`. Therefore, I replaced vitest by Jest.
 
 ## How to run it
 
