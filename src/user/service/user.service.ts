@@ -2,27 +2,24 @@ import { NotFoundError } from "../../exception/notfound.error";
 import { DuplicateError } from "../../exception/duplicate.error";
 import { User } from "../model/user.interface";
 import userRepository from "../repository/user.repository";
-import { AvatarService } from "./avatar.service";
 
 export class UserService {
-  private avatarService: AvatarService;
+  constructor() {}
 
-  constructor() {
-    this.avatarService = new AvatarService();
-  }
   async getAllUsers(): Promise<User[]> {
     const users = await userRepository.getAllUsers();
     return users;
   }
 
-  async createUser(user: any): Promise<User> {
+  async createUser(user: any, picture: string): Promise<User> {
     const userFound = await userRepository.findUserByEmail(user.email);
 
     if (userFound) {
       throw new DuplicateError(`email ${user.email} is in use`);
     }
 
-    user.picture = await this.avatarService.getRandomAvatar();
+    user.picture = picture;
+
     const newUser: User = await userRepository.createUser(user);
     return newUser;
   }

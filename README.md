@@ -27,6 +27,21 @@ Therefore, I created this repository with the purpose of having a **full backend
 
 - Run the app and go to `http://localhost:3000/graphql` and try the following queries:
 
+- **Get User by Id**:
+
+```
+query {
+  getUser(id:1){
+    id,
+    age,
+    firstName,
+    lastName,
+    yearsOfExperience,
+    picture
+  }
+}
+```
+
 - **Create User**:
 
 ```

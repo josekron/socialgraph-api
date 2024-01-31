@@ -1,10 +1,11 @@
 import { Application } from "express";
 import { graphqlHTTP } from "express-graphql";
 import schema from "./user/schema";
-import { root } from "./user/resolvers";
+import { resolvers } from "./user/resolvers";
 import cors, { CorsOptions } from "cors";
 import "dotenv/config";
 import Database from "./database/database";
+import { UserService } from "./user/service/user.service";
 
 export default class Server {
   db: Database;
@@ -20,14 +21,19 @@ export default class Server {
     };
     app.use(cors(corsOptions));
 
-    app.use(
-      "/graphql",
-      graphqlHTTP({
+    const userService = new UserService();
+
+    app.use("/graphql", (request, response) => {
+      return graphqlHTTP({
         schema: schema,
-        rootValue: root,
+        rootValue: resolvers,
         graphiql: true,
-      })
-    );
+        context: {
+          request,
+          userService,
+        },
+      })(request, response);
+    });
   }
 
   private syncDatabase(): void {
