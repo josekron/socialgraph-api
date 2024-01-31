@@ -13,7 +13,7 @@ Therefore, I created this repository with the purpose of having a **full backend
 - Jest + Supertest for the tests
 - Docker-compose to run the app and the database
 
-> **Note:** `vitest` has an [unsolved issue](https://github.com/vitejs/vite/issues/7879) with `express` + `supertest-graphql`. Therefore, I replaced vitest by Jest.
+> **Note:** `vitest` has an [unsolved issue](https://github.com/vitejs/vite/issues/7879) with `express` + `supertest-graphql`. Therefore, I replaced vitest with Jest.
 
 ## How to run it
 
